@@ -1,0 +1,132 @@
+<!--
+ * @Author: Blumiao
+ * @Date: 2021-11-05 09:08:25
+ * @LastEditTime: 2021-11-05 16:14:11
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \Tab\index.html
+-->
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tab选项卡</title>
+  <link rel="stylesheet" href="index1.css">
+  <!-- <script src="index1.js"></script> -->
+</head>
+
+<body>
+  <div class="container">
+    <h2>Tab选项卡1</h2>
+    <div class="tabs">
+      <div class="tab-header">
+        <span class="tab-item active">用户管理</span>
+        <span class="tab-item">配置管理</span>
+        <span class="tab-item">角色管理</span>
+        <span class="tab-item">定时任务补偿</span>
+        <span class="line"></span>
+      </div>
+      <div class="tab-contents">
+        <div class="tab-panel active">用户管理</div>
+        <div class="tab-panel">配置管理</div>
+        <div class="tab-panel">角色管理</div>
+        <div class="tab-panel">定时任务补偿</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <h2>Tab选项卡2</h2>
+    <div class="tabs">
+      <div class="tab-header">
+        <span class="tab-item active">用户管理</span>
+        <span class="tab-item">配置管理</span>
+        <span class="tab-item">角色管理</span>
+        <span class="tab-item">定时任务补偿</span>
+        <span class="line"></span>
+      </div>
+      <div class="tab-contents">
+        <div class="tab-panel active">用户管理</div>
+        <div class="tab-panel">配置管理</div>
+        <div class="tab-panel">角色管理</div>
+        <div class="tab-panel">定时任务补偿</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    //为了防止麻烦，所以将这些比较长的命令放在变量里
+    const $ = s => document.querySelector(s)
+    const $$ = s => document.querySelectorAll(s)
+
+    //面向对象的方式
+    class Tabs {
+      constructor($container) {
+        this.$container = $container
+        this.$$tabItem = $container.querySelectorAll('.tab-item')
+        this.$$tabPanel = $container.querySelectorAll('.tab-panel')
+        this.$line = $container.querySelector('.line')
+
+        this.init()
+        this.bind()
+      }
+      init(){
+        this.$line.style.width = this.$$tabItem[0].offsetWidth + 'px'
+      }
+      
+      bind(){
+        //在函数里边的this指的是$$tabItem,为了和我们的container的这个this区分开，我们就把我们的this放到个变量里
+        let self = this
+        self.$$tabItem.forEach($tab => {
+          $tab.onclick = function () {
+            self.$$tabItem.forEach($tab => $tab.classList.remove('active'))
+            this.classList.add('active')
+
+            console.log(this.offsetWidth)
+            console.log(this.offsetLeft)
+            self.$line.style.width = this.offsetWidth + 'px'
+            self.$line.style.transform = `translateX(${this.offsetLeft}px)`
+
+            let index = [...self.$$tabItem].indexOf(this)
+            self.$$tabPanel.forEach($panel => $panel.classList.remove('active'))
+            self.$$tabPanel[index].classList.add('active')
+          }
+        })
+      }
+    }
+
+    document.querySelectorAll('.tabs').forEach($container => new Tabs($container) )
+
+    /*
+    const $$tabItem = $$('.tabs .tab-item')
+    const $$tabPanel = $$('.tabs .tab-panel')
+    const $line = $('.tabs .line')
+
+    $line.style.width = $$tabItem[0].offsetWidth + 'px'
+    //我们自己默认将带$的作为DOM元素，将带$$作为类数组对象
+    $$tabItem.forEach($tab => {
+      $tab.onclick = function () {
+        $$tabItem.forEach($tab => $tab.classList.remove('active'))
+        this.classList.add('active')
+
+        
+        //offsetWidth是你点击的那个位置dom元素的宽度，而offsetLeft是相对于你加relative的那个位置的左移量如果你没加。那就是相当于body的，下边打印在控制台上可以看效果
+        
+        console.log(this.offsetWidth)
+        console.log(this.offsetLeft)
+        $line.style.width = this.offsetWidth + 'px'
+        $line.style.transform = `translateX(${this.offsetLeft}px)`
+
+        let index = [...$$tabItem].indexOf(this)
+        $$tabPanel.forEach($panel => $panel.classList.remove('active'))
+        $$tabPanel[index].classList.add('active')
+      }
+    })
+    */
+  </script>
+</body>
+
+</html>

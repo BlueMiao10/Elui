@@ -1,0 +1,59 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-11-05 16:22:21
+ * @LastEditTime: 2021-11-05 20:18:12
+ * @LastEditors: Please set LastEditors
+ * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @FilePath: \undefinedd:\web\js\Elui\Collapse\index1.html
+-->
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Collapse</title>
+  <link rel="stylesheet" href="index1.css">
+</head>
+
+<body>
+  <div class="container">
+    <h2>手风琴效果</h2>
+    <div class="collapse">
+      <div class="item">
+        <div class="item-header">一致性 Consistency</div>
+        <div class="item-content">
+          与现实生活一致：与现实生活的流程、逻辑保持一致，遵循用户习惯的语言和概念；<br>
+          在界面中一致：所有的元素和结构须保持一致，比如设计模式、图标和文本、元素的位置等。
+        </div>
+      </div>
+      <div class="item">
+        <div class="item-header">反馈 Feedback</div>
+        <div class="item-content">
+          控制反馈：通过界面样式和交互效果可以让用户清晰的感知自己的操作；<br>
+          页面反馈：操作后，通过页面元素的变化清晰的展现当前的状态。
+        </div>
+      </div>
+      <div class="item">
+        <div class="item-header">效率 Efficiency</div>
+        <div class="item-content">
+          简化流程：设计简洁直观的操作流程；<br>
+          清晰明确：语言表达清晰且表意明确，让用户快速理解进而做出正确决策；<br>
+          帮助用户识别：界面简单直白，让用户快速识别而非会议，减少用户记忆负担。
+        </div>
+      </div>
+      <div class="item">
+        <div class="item-header">可控 Controllability</div>
+        <div class="item-content">
+          用户决策：根据场景可给予用户操作建议或安全提示，但不能代替用户进行决策；<br>
+          结果可控：用户可以自由的进行操作，包括撤销、回退和终止当前操作。
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--放在后边是因为浏览器从上到下解析，放dom前面，这样dom未生成， document.querySelector(id)为null，所以调用querySelectAll就报错了。-->
+  <script src="index1.js"></script>
+</body>
+
+</html>
