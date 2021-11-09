@@ -1,0 +1,118 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 15px;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 15px;
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.6);
+}
+
+h2 {
+  margin: 15px;
+}
+
+.button {
+  background-color: #fff;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.3);
+  padding: 6px 10px;
+  margin: 5px 0;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.button.btn-certain {
+  background-color: skyblue;
+  color: #fff;
+  margin-left: 10px;
+}
+
+.content p {
+  margin: 20px 0;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.footer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.dialog {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: none;
+  opacity: 0;
+  transition: all 0.3s;
+}
+
+.dialog.show {
+  display: block;
+}
+
+.dialog.appear {
+  opacity: 1;
+}
+
+.dialog .main {
+  width: 30%;
+  background-color: #fff;
+  margin: 0 auto;
+  padding: 8px 15px;
+  border-radius: 5px;
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.6);
+  transform: translateY(-100%);
+  opacity: 0;
+  transition: all 0.3s;
+}
+
+.dialog.appear .main {
+  transform: translateY(100px);
+  opacity: 1;
+}
+
+.header {
+  display: flex;
+  font-size: 18px;
+  justify-content: center;
+  align-items: center;
+}
+
+.header > button {
+  margin-left: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  outline: none;
+  border: none;
+  padding: 5px;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.header .close::before,
+.header .close::after {
+  content: "";
+  display: block;
+  width: 12px;
+  height: 2px;
+  background-color: #333;
+  transform: rotate(45deg);
+  position: absolute;
+}
+
+.header .close::after {
+  transform: rotate(-45deg);
+}
