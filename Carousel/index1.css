@@ -43,23 +43,23 @@ ul {
   z-index: 1;
 }
 .carousel .panels .img1 {
-  background: url(/img1.jpg) no-repeat;
+  background: url(/Carousel/img1.jpg) no-repeat;
   background-size: 100%;
   background-position-y: 10%;
 }
 
 .carousel .panels .img2 {
-  background: url(/img2.jpg) no-repeat;
+  background: url(/Carousel/img2.jpg) no-repeat;
   background-size: 100%;
   background-position-y: 50%;
 }
 .carousel .panels .img3 {
-  background: url(/img3.jpg) no-repeat;
+  background: url(/Carousel/img3.jpg) no-repeat;
   background-size: 100%;
   background-position-y: 50%;
 }
 .carousel .panels .img4 {
-  background: url(/img4.jpg) no-repeat;
+  background: url(/Carousel/img4.jpg) no-repeat;
   background-size: 100%;
   background-position-y: 70%;
 }
