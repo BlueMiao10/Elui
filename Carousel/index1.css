@@ -41,23 +41,27 @@ ul {
 }
 
 .carousel .panels .img1 {
-  background: url(/img1.jpg) no-repeat;
+  background: url(https://s3.bmp.ovh/imgs/2021/11/49513521c9749043.jpg)
+    no-repeat;
   background-size: 100%;
   background-position-y: 10%;
 }
 
 .carousel .panels .img2 {
-  background: url(/img2.jpg) no-repeat;
+  background: url(https://s3.bmp.ovh/imgs/2021/11/bc0902dcd04fe33c.jpg)
+    no-repeat;
   background-size: 100%;
   background-position-y: 50%;
 }
 .carousel .panels .img3 {
-  background: url(/img3.jpg) no-repeat;
+  background: url(https://s3.bmp.ovh/imgs/2021/11/5eb54c428a8f5e30.jpg)
+    no-repeat;
   background-size: 100%;
   background-position-y: 50%;
 }
 .carousel .panels .img4 {
-  background: url(/img4.jpg) no-repeat;
+  background: url(https://s3.bmp.ovh/imgs/2021/11/5d9a20514bf7c2ac.jpg)
+    no-repeat;
   background-size: 100%;
   background-position-y: 70%;
 }
