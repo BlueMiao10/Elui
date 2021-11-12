@@ -1,48 +1,49 @@
-class Dialog{
-  constructor($root,options = {}){
+class Dialog {
+  constructor($root, options = {}) {
     this.$root = $root
     this.options = options
-    this.onCancel = options.onCancel || function(){}
-    this.onCertain = options.onCertain || function(){}
+    //这个柑橘就一个用处，知道用户点的时确认还是取消
+    this.onCancel = options.onCancel || function () { }
+    this.onCertain = options.onCertain || function () { }
 
     this.bind()
   }
-  bind(){
+  bind() {
     let self = this
-    this.$root.querySelector('.close').onclick = function(){
+    this.$root.querySelector('.close').onclick = function () {
       self.hide()
       self.onCancel()
     }
-    this.$root.querySelector('.btn-cancel').onclick = function(){
+    this.$root.querySelector('.btn-cancel').onclick = function () {
       self.hide()
       self.onCancel()
     }
-    this.$root.querySelector('.btn-certain').onclick = function(){
+    this.$root.querySelector('.btn-certain').onclick = function () {
       self.hide()
       self.onCertain()
     }
   }
 
-  hide(){
+  hide() {
     this.$root.classList.remove('appear')
-    setTimeout(() => this.$root.classList.remove('show'),400)
+    setTimeout(() => this.$root.classList.remove('show'), 400)
   }
 
-  show(){
+  show() {
     this.$root.classList.add('show')
     setTimeout(() => this.$root.classList.add('appear'))
   }
 }
 
- let dialog = new Dialog(document.querySelector('.dialog'),{
-   onCertain(){
-     console.log('用户点了确定')
-   },
-   onCancel(){
-  console.log('用户点了取消')
- }
+let dialog = new Dialog(document.querySelector('.dialog'), {
+  onCertain() {
+    console.log('用户点了确定')
+  },
+  onCancel() {
+    console.log('用户点了取消')
+  }
 })
 
- document.querySelector('.open-dialog').onclick = function(){
-   dialog.show()
- }
+document.querySelector('.open-dialog').onclick = function () {
+  dialog.show()
+}

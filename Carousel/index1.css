@@ -23,6 +23,7 @@ ul {
 .carousel {
   position: relative;
   height: 230px;
+  overflow: hidden;
 }
 
 .carousel .panels > a {
@@ -33,40 +34,37 @@ ul {
   justify-content: center;
   align-items: center;
   text-decoration: none;
-  opacity: 0;
-  z-index: 0;
-  transition: all 0.6s;
-}
-
-.carousel .panels > a.active {
-  opacity: 1;
   z-index: 1;
 }
+.carousel .panels > a.active {
+  z-index: 10;
+}
+
 .carousel .panels .img1 {
-  background: url(/Carousel/img1.jpg) no-repeat;
+  background: url(/img1.jpg) no-repeat;
   background-size: 100%;
   background-position-y: 10%;
 }
 
 .carousel .panels .img2 {
-  background: url(/Carousel/img2.jpg) no-repeat;
+  background: url(/img2.jpg) no-repeat;
   background-size: 100%;
   background-position-y: 50%;
 }
 .carousel .panels .img3 {
-  background: url(/Carousel/img3.jpg) no-repeat;
+  background: url(/img3.jpg) no-repeat;
   background-size: 100%;
   background-position-y: 50%;
 }
 .carousel .panels .img4 {
-  background: url(/Carousel/img4.jpg) no-repeat;
+  background: url(/img4.jpg) no-repeat;
   background-size: 100%;
   background-position-y: 70%;
 }
 
 .carousel .arrow {
   position: absolute;
-  z-index: 2;
+  z-index: 100;
   top: 50%;
   height: 32px;
   width: 32px;
@@ -120,7 +118,7 @@ ul {
 
 .carousel .indicators {
   position: absolute;
-  z-index: 2;
+  z-index: 100;
   left: 50%;
   transform: translateX(-50%);
   bottom: 15px;
